@@ -46,7 +46,6 @@ void Draw_map (){
                 }
         }
     printf("\n\t\t-------------\n");
-    printf("\t\t  1   2   3  \n");
 }
 
 // Inizializzo la matrice
@@ -65,10 +64,10 @@ void StartGame (){
     pc_winner ();
     player_winner ();
 
-    if (turno == 0)
-        Insert_p ();
+  /*  if (turno == 0)
+        Insert_player ();
         else if (turno == 1)
-            Insert_rand ();
+            Insert_rand ();*/
 }
 
 void player_winner(){
@@ -221,6 +220,4 @@ void set_number (){
         case 8: mappa [0][1]= 'O';break;
         case 9: mappa [0][2]= 'O';break;
     }
-
-
 }
