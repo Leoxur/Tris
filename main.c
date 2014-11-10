@@ -168,7 +168,7 @@ void pc_winner (){
 
 void Insert_player (){
 
-    printf("\n\t%s e' il tuo turno", *Player_name);
+   /* printf("\n\t%s e' il tuo turno", *Player_name);
     do{
         scanf("%d", choice);
         } while (choice < 0 || choice > 8);
@@ -176,13 +176,13 @@ void Insert_player (){
     if ( mappa[i][j] = 0)
         mappa[i][j] = 2;
         turno = 1;
-        StartGame();
+        StartGame();*/
 }
 
 //Numero casuale tra 0 e 8
 int Insert_rand (){
 
-    srand(10);
+   /* srand(10);
     for( i = 0; i < 10; i++)
     printf("3- Rand is %d\n", rand() % 8 );
     if ( mappa[i][j] = 0)
@@ -210,5 +210,17 @@ void EndGame(){
 
 void set_number (){
 
-    switch
+    switch (choice){
+        case 1: mappa [2][0]= 'O';break;
+        case 2: mappa [2][1]= 'O';break;
+        case 3: mappa [2][2]= 'O';break;
+        case 4: mappa [1][0]= 'O';break;
+        case 5: mappa [1][1]= 'O';break;
+        case 6: mappa [1][2]= 'O';break;
+        case 7: mappa [0][0]= 'O';break;
+        case 8: mappa [0][1]= 'O';break;
+        case 9: mappa [0][2]= 'O';break;
+    }
+
+
 }
