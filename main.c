@@ -10,7 +10,7 @@ void Map_init ();  // Inizializzo la matrice
 void StartGame (); // Disegna la mappa, controlla chi ha vinto e switcha i turni
 void pc_winner ();
 void player_winner ();
-void Insert_p ();
+void Insert_player ();
 int Insert_rand ();
 void EndGame ();
 void set_number ();
