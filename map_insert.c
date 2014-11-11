@@ -7,6 +7,7 @@ void draw_map ();
 void map_null ();
 void insert_player ();
 void insert_pc ();
+int randomize ();
 
 char mappa[3][3];   //Real map
 int appo_map[3][3]; //Buffermap
@@ -14,11 +15,11 @@ int turn = 0;   //0 = Player turn, 1 = Pc turn
 int c = 0;
 int pc = 0;
 
-
 int main (){
 
     int counter = 0; //contatore mosse, massimo a 9
     map_null();
+    srand(9);
     do{
         switch(turn){
             case 0: {
@@ -36,7 +37,6 @@ int main (){
                     turn = 0;
                     counter++;
                     }; break;
-
         }
     }while(counter <= 9);
 return 0;
@@ -75,14 +75,12 @@ void insert_player(){
             printf("\nReinserire un valore\n");
             insert_player();
             }
-        turn = 1;
 }
 
 void insert_pc(){
 
-    srand(9);
-    pc = rand() %9;
-    if ( pc > 0 && c < 10 )
+
+    pc = rand() %9; printf ("Rand is %d ", pc);
                 switch (pc){
                     case  1:{ appo_map[2][0]=pc;
                                  mappa[2][0]= 'O';}   break;
@@ -105,11 +103,6 @@ void insert_pc(){
                     case  9:{ appo_map[0][2]=pc;
                                  mappa[0][2]= 'O';}   break;
                 }
-            else {
-            printf("\nReinserire un valore\n");
-            insert_pc();
-            }
-        turn = 1;
 }
 
 void draw_map(){
