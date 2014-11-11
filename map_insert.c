@@ -1,10 +1,11 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 void draw_map ();
 void map_null ();
 void insert_player ();
-
+void clear_screen ();
 char mappa[2][2];   //Real map
 int appo_map[2][2]; //Buffermap
 int turn = 0;   //0 = Player turn, 1 = Pc turn
@@ -17,20 +18,22 @@ int main (){
     map_null();
     draw_map();
     do{
-        switch(turn){
-            case 0: {draw_map();
+        //switch(turn){
+           // case 0: {
+                    clear_screen();
+                    draw_map();
                     insert_player();
                     turn = 0;
                     counter++;
-                    }; break;
+                   // }; break;
 
-            case 1: {//insert_pc();
+           /* case 1: {//insert_pc();
                     draw_map();
                     turn = 0;
                     counter++;
-                    }; break;
+                    }; break;*/
 
-        }
+       // }
     }while(counter < 9);
 }
 
@@ -82,8 +85,8 @@ printf("In function draw_map");
 			else if (appo_map[i][j] == 2)
                 printf("| X ");
             else
-				printf (" %c | ", mappa [i][j]);
-            printf(" %c ", mappa[i][j]);*/
+				printf (" %c | ", mappa [i][j]);*/
+            printf(" %c ", mappa[i][j]);
             }printf(" |");
     }
         printf("\n\t\t-------------\n");
@@ -101,3 +104,9 @@ void map_null(){
         }
 }
 
+
+void clear_screen(){
+
+    const char* CLEAR_SCREE_ANSI = "\e[1;1H\e[2J";
+    write (STDOUT_FILENO, CLEAR_SCREE_ANSI, 12);
+    }
