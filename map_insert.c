@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void clear_screen ();
 void draw_map ();
@@ -19,7 +20,6 @@ int main (){
 
     int counter = 0; //contatore mosse, massimo a 9
     map_null();
-    srand(9);
     do{
         switch(turn){
             case 0: {
@@ -79,8 +79,11 @@ void insert_player(){
 
 void insert_pc(){
 
-
-    pc = rand() %9; printf ("Rand is %d ", pc);
+    time_t t;
+    //Generatore numeri casuali (inizializzazione seme)
+    srand((unsigned) time(&t));
+    pc = rand() % 9 + 1;
+    printf ("\n\n\n\n\nRand is %d ", pc);
                 switch (pc){
                     case  1:{ appo_map[2][0]=pc;
                                  mappa[2][0]= 'O';}   break;
